@@ -3,10 +3,10 @@ import { useState } from "react";
 const resources = [
   { category: "DSA", title: "Striver SDE Sheet", link: "https://takeuforward.org" },
   { category: "DSA", title: "NeetCode 150", link: "https://neetcode.io" },
-  { category: "Aptitude", title: "RS Aggarwal Quant", link: "https://example.com" },
+  { category: "Aptitude", title: "RS Aggarwal Quant", link: "https://www.scribd.com/document/901477674/Rs-Aggarwal-Quantitative-Aptitude-New-Em" },
   { category: "Core CS", title: "DBMS Interview Notes", link: "https://example.com" },
   { category: "Resume", title: "ATS Resume Template", link: "https://example.com" },
-  { category: "Company Prep", title: "Infosys Interview Questions", link: "https://example.com" }
+  { category: "Company Prep", title: "GfG 160 - 160 Days of Problem Solving", link: "https://www.geeksforgeeks.org/courses/gfg-160-series" }
 ];
 
 export default function Resources() {
