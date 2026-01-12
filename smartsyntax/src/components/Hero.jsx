@@ -8,7 +8,7 @@ export default function Hero() {
       </h1>
 
       <p className="text-cyan-400 text-sm sm:text-base md:text-lg mt-2">
-        get ready for future engineering
+        Get ready for future engineering roles with free resources & job alerts
       </p>
 
       <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
