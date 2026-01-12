@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 export default function Hero() {
   return (
     <section className="text-center py-20 px-4">
@@ -12,9 +15,13 @@ export default function Hero() {
         <a href="#jobs" className="px-6 py-3 bg-cyan-500 text-black rounded-lg shadow-glow">
           Apply for Jobs
         </a>
-        <a href="#resources" className="px-6 py-3 border border-cyan-400 rounded-lg">
-          Free Placement Material
-        </a>
+        <Link
+         to="/resources"
+        className="px-6 py-3 border border-cyan-400 rounded-lg"
+        >
+         Free Placement Material
+        </Link>
+
       </div>
     </section>
   );

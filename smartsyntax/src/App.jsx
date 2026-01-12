@@ -1,16 +1,15 @@
-import Hero from "./components/Hero";
-import Jobs from "./components/Jobs";
-import Resources from "./components/Resources";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Resources from "./pages/Resources";
 import StickyBar from "./components/StickyBar";
-import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <div className="bg-dark min-h-screen text-white">
-      <Hero />
-      <Jobs />
-      <Resources />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/resources" element={<Resources />} />
+      </Routes>
       <StickyBar />
     </div>
   );
