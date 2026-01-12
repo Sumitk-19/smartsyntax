@@ -5,11 +5,12 @@ import StickyBar from "./components/StickyBar";
 
 export default function App() {
   return (
-    <div className="bg-dark min-h-screen text-white">
+    <div className="bg-dark min-h-screen text-white pb-16">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
+
       <StickyBar />
     </div>
   );

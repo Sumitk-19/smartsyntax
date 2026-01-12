@@ -22,24 +22,22 @@ export default function Jobs() {
   const visibleJobs = filteredJobs.slice(0, visibleCount);
 
   return (
-    <section id="jobs" className="px-4 py-12">
-      <h2 className="text-2xl font-bold text-cyan-400 mb-4">
+    <section id="jobs" className="py-10">
+      <h2 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-4">
         Latest Opportunities
       </h2>
 
-      {/* Search Bar */}
       <input
-        type="text"
-        placeholder="Search by company or role..."
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);
-          setVisibleCount(PAGE_SIZE); // reset pagination on new search
+          setVisibleCount(PAGE_SIZE);
         }}
-        className="w-full mb-6 p-3 rounded-lg bg-black border border-cyan-400 text-white outline-none"
+        placeholder="Search by company or role..."
+        className="w-full max-w-xl mb-6 p-3 bg-black border border-cyan-400 rounded-lg outline-none"
       />
 
-      <div className="grid gap-6">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {visibleJobs.map((job, i) => (
           <div key={i} className="glass p-4 rounded-xl">
             <div className="flex items-center gap-3">
@@ -81,7 +79,7 @@ export default function Jobs() {
               }
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center mt-4 bg-cyan-500 text-black py-2 rounded-lg shadow-glow"
+              className="block text-center mt-4 bg-cyan-500 text-black py-2 rounded-lg"
             >
               Apply Now
             </a>
@@ -89,11 +87,10 @@ export default function Jobs() {
         ))}
       </div>
 
-      {/* Load More */}
       {visibleCount < filteredJobs.length && (
         <div className="mt-8 text-center">
           <button
-            onClick={() => setVisibleCount(prev => prev + PAGE_SIZE)}
+            onClick={() => setVisibleCount(v => v + PAGE_SIZE)}
             className="px-6 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-500 hover:text-black transition"
           >
             Load More Jobs

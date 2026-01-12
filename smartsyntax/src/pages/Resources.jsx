@@ -1,45 +1,46 @@
 import { useState } from "react";
 
-const materials = [
+const resources = [
   { category: "DSA", title: "Striver SDE Sheet", link: "https://takeuforward.org" },
   { category: "DSA", title: "NeetCode 150", link: "https://neetcode.io" },
-  { category: "Aptitude", title: "RS Aggarwal Quant PDF", link: "https://..." },
-  { category: "Core CS", title: "DBMS Interview Notes", link: "https://..." },
-  { category: "Resume", title: "ATS Resume Template", link: "https://..." },
-  { category: "Company Prep", title: "Infosys Interview Questions", link: "https://..." }
+  { category: "Aptitude", title: "RS Aggarwal Quant", link: "https://example.com" },
+  { category: "Core CS", title: "DBMS Interview Notes", link: "https://example.com" },
+  { category: "Resume", title: "ATS Resume Template", link: "https://example.com" },
+  { category: "Company Prep", title: "Infosys Interview Questions", link: "https://example.com" }
 ];
 
 export default function Resources() {
   const [search, setSearch] = useState("");
 
-  const filtered = materials.filter(m =>
-    m.title.toLowerCase().includes(search.toLowerCase()) ||
-    m.category.toLowerCase().includes(search.toLowerCase())
+  const filtered = resources.filter(r =>
+    r.title.toLowerCase().includes(search.toLowerCase()) ||
+    r.category.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className="px-4 py-10">
-      <h1 className="text-3xl text-cyan-400 font-bold mb-4">
+    <div className="max-w-6xl mx-auto px-4 py-10">
+      <h1 className="text-3xl md:text-4xl text-cyan-400 font-bold mb-6">
         Placement & Interview Resources
       </h1>
 
       <input
-        placeholder="Search DSA, Resume, OS, DBMS, Company..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full mb-6 p-3 bg-black border border-cyan-400 rounded-lg"
+        placeholder="Search DSA, Resume, DBMS, Company..."
+        className="w-full max-w-xl mb-8 p-3 bg-black border border-cyan-400 rounded-lg outline-none"
       />
 
-      <div className="grid gap-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((r, i) => (
           <a
             key={i}
             href={r.link}
             target="_blank"
-            className="glass p-4 rounded-lg hover:shadow-glow"
+            rel="noopener noreferrer"
+            className="glass p-4 rounded-lg hover:shadow-glow transition"
           >
-            <p className="text-cyan-400">{r.category}</p>
-            <h3 className="font-semibold">{r.title}</h3>
+            <p className="text-cyan-400 text-sm">{r.category}</p>
+            <h3 className="font-semibold mt-1">{r.title}</h3>
           </a>
         ))}
       </div>
